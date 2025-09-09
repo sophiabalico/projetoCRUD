@@ -4,7 +4,10 @@ export default function ApiInfoPage() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1 className={styles.title}>Sobre a API</h1>
+        <h1 className={styles.title}>
+          <img src="/icons/globo.png" alt="API" className={styles.apiIcon} />
+          Sobre a API
+        </h1>
         <p className={styles.text}>
           <span className={styles.label}>Nome da API:</span> <strong>Countries API</strong>
         </p>

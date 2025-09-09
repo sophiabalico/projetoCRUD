@@ -1,3 +1,12 @@
+/* Título estilizado */
+.entidadeTitulo {
+  color: #177ebe;
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 2px 8px #177ebe22;
+}
 .container {
     padding: 20px;
     text-align: center;
@@ -19,6 +28,21 @@
     width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: box-shadow 0.22s, transform 0.22s;
+  }
+
+  .card:hover {
+    box-shadow: 0 12px 36px rgba(23,126,190,0.18), 0 2px 0 #177ebe inset;
+    transform: translateY(-4px) scale(1.03);
+  }
+
+  .buttonRight {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
   
   .image {
@@ -31,14 +55,28 @@
   .detailsButton {
     display: inline-block;
     margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #0070f3;
-    color: white;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #011c40, #26658c 100%);
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 112, 243, 0.15);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    outline: none;
   }
   
   .detailsButton:hover {
-    background-color: #005bb5;
+  background: #09437d;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(0, 112, 243, 0.18);
+  }
+
+  .detailsButton:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 112, 243, 0.10);
   }

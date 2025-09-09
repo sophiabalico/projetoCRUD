@@ -1,11 +1,66 @@
+.subtitle {
+  font-size: 1.5rem;
+  color: #177ebe;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.quote {
+  font-size: 1.15rem;
+  color: #555;
+  font-style: italic;
+  background: #f4f8ff;
+  border-left: 4px solid #177ebe;
+  padding: 18px 24px;
+  border-radius: 8px;
+  margin: 28px auto 0 auto;
+  max-width: 420px;
+  box-shadow: 0 2px 8px rgba(0,112,243,0.07);
+}
+
+.homeDecor {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mapaMundi {
+  width: 340px;
+  max-width: 90vw;
+  opacity: 0.92;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,112,243,0.10);
+  border: 2px solid #d9e8fc;
+}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(90deg, #f0f4f8, #d9e8fc); /* Fundo cinza claro */
   padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(90deg, #f0f4f8, #d9e8fc), url('/images/mapa-mundi.png') center center/cover no-repeat;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
 }
 
 .imageContainer {
@@ -13,8 +68,15 @@
 }
 
 .image {
-  border-radius: 50%; /* Torna a imagem circular */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra à imagem */
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  max-width: 90vw;
+  max-height: 90vw;
+  display: block;
 }
 
 .textContainer {
@@ -38,4 +100,36 @@
   font-size: 1rem;
   color: #777; /* Cor do texto da frase */
   font-style: italic;
+}
+
+
+.notFoundButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 18px 38px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #011c40, #26658c);;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 16px rgba(0, 112, 243, 0.15);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.notFoundButton:hover {
+  background: #09437d;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(0, 112, 243, 0.18);
+}
+
+.notFoundButton:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 112, 243, 0.10);
 }
