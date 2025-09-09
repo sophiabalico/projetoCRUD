@@ -1,24 +1,38 @@
-import React from 'react';
+import styles from "./appinfo.module.css";
 
-const ApiInfoPage = () => {
+export default function ApiInfoPage() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Informações sobre a API</h1>
-      <p><strong>Nome da API:</strong> Rick and Morty API</p>
-      <p>
-        <strong>Documentação oficial:</strong>{' '}
-        <a href="https://api.sampleapis.com/countries/countries" target="_blank" rel="noopener noreferrer">
-          Rick and Morty API Documentation
-        </a>
-      </p>
-      <p><strong>URL base:</strong> https://rickandmortyapi.com/api</p>
-      <p><strong>Endpoint escolhido:</strong> /character</p>
-      <p><strong>Atributos recebidos:</strong> id, name, status, species, type, gender, origin, location, image</p>
-      <p>
-        <strong>Descrição:</strong> A Rick and Morty API fornece informações detalhadas sobre os personagens, episódios e locais do universo da série Rick and Morty. É uma API RESTful que permite buscar dados como nomes, status, espécies e imagens dos personagens.
-      </p>
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Sobre a API</h1>
+        <p className={styles.text}>
+          <span className={styles.label}>Nome da API:</span> <strong>Countries API</strong>
+        </p>
+        <p className={styles.text}>
+          <span className={styles.label}>Documentação oficial:</span>{" "}
+          <a
+            href="https://sampleapis.com/api-list/countries"
+            target="_blank"
+            className={styles.link}
+          >
+            Countries API Documentation
+          </a>
+        </p>
+        <p className={styles.text}>
+          <span className={styles.label}>URL base:</span> https://api.sampleapis.com/countries
+        </p>
+        <p className={styles.text}>
+          <span className={styles.label}>Endpoint usado:</span> /countries
+        </p>
+        <p className={styles.text}>
+          <span className={styles.label}>Atributos recebidos:</span>{" "}
+          <strong>id, nome, imagem, descricaoCurta, populacao, area</strong>
+        </p>
+        <p className={styles.text}>
+          <span className={styles.label}>Descrição:</span> Essa API fornece informações sobre
+          países, incluindo nome, população, área e outras características.
+        </p>
+      </div>
     </div>
   );
-};
-
-export default ApiInfoPage;
+}

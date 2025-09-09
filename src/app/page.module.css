@@ -1,58 +1,41 @@
 .container {
-    display: flex;
-    padding: 0rem 7rem;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #fff;
-  }
-  
-  .main {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 5rem;
-  }
-  
-  .content {
-    padding: 20px;
-    border-radius: 8px;
-    width: 60%;
-    max-width: 1000px;
-  }
-  
-  .content h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color:#A020F0;
-    font-weight: 700;
-  }
-  
-  .content p {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    max-width: 900px;
-    color: #555;
-  }
-  
-  .image {
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #f0f4f8, #d9e8fc); /* Fundo cinza claro */
+  padding: 20px;
+}
 
-  .button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .button:hover {
-    background-color: #005bb5;
-  }
+.imageContainer {
+  margin-bottom: 30px; /* Espaço entre a imagem e o texto */
+}
+
+.image {
+  border-radius: 50%; /* Torna a imagem circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra à imagem */
+}
+
+.textContainer {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333; /* Cor do título */
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #555; /* Cor do texto da descrição */
+  margin-bottom: 15px;
+}
+
+.quote {
+  font-size: 1rem;
+  color: #777; /* Cor do texto da frase */
+  font-style: italic;
+}
