@@ -17,7 +17,24 @@ export default function CountryDetail({ country }) {
             />
             <span className={styles.detailFlagLabel}>Bandeira</span>
           </div>
-        ) : <div className={styles.detailFlagBox} />}
+        ) : (
+          <div className={styles.detailFlagBox} style={{
+            width: 120,
+            height: 80,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#f0f4f8',
+            color: '#177ebe',
+            borderRadius: 8,
+            fontWeight: 600,
+            fontSize: '1rem',
+            border: '1.5px dashed #177ebe55',
+            textAlign: 'center'
+          }}>
+            Bandeira não disponível
+          </div>
+        )}
         {/* Nome centralizado */}
         <div className={styles.detailNameBox}>
           <h2 className={styles.detailName}>{country.name}</h2>
@@ -35,17 +52,54 @@ export default function CountryDetail({ country }) {
             />
             <span className={styles.detailEmblemLabel}>Emblema</span>
           </div>
-        ) : <div className={styles.detailEmblemBox} />}
+        ) : (
+          <div className={styles.detailEmblemBox} style={{
+            width: 70,
+            height: 70,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#f0f4f8',
+            color: '#177ebe',
+            borderRadius: 8,
+            fontWeight: 600,
+            fontSize: '0.95rem',
+            border: '1.5px dashed #177ebe55',
+            textAlign: 'center'
+          }}>
+            Emblema não disponível
+          </div>
+        )}
       </div>
       {/* Containers de informações */}
       <div className={styles.detailInfoList}>
-        <div className={styles.detailInfo}><span className={styles.detailLabel}>🏛️ Capital:</span> <span className={styles.detailValue}>{country.capital}</span></div>
-        <div className={styles.detailInfo}><span className={styles.detailLabel}>👥 População:</span> <span className={styles.detailValue}>{country.population?.toLocaleString('pt-BR')}</span></div>
-        <div className={styles.detailInfo}><span className={styles.detailLabel}>💰 Moeda:</span> <span className={styles.detailValue}>{country.currency}</span></div>
-        <div className={styles.detailInfo}><span className={styles.detailLabel}>📞 DDD:</span> <span className={styles.detailValue}>+{country.phone}</span></div>
+        <div className={styles.detailInfo}>
+          <span className={styles.detailLabel}>🏛️ Capital:</span>
+          <span className={styles.detailValue}>
+            {country.capital ? country.capital : <span style={{ color: '#b0b0b0', fontStyle: 'italic' }}>Capital não informada</span>}
+          </span>
+        </div>
+        <div className={styles.detailInfo}>
+          <span className={styles.detailLabel}>👥 População:</span>
+          <span className={styles.detailValue}>
+            {country.population ? country.population.toLocaleString('pt-BR') : <span style={{ color: '#b0b0b0', fontStyle: 'italic' }}>População não informada</span>}
+          </span>
+        </div>
+        <div className={styles.detailInfo}>
+          <span className={styles.detailLabel}>💰 Moeda:</span>
+          <span className={styles.detailValue}>
+            {country.currency ? country.currency : <span style={{ color: '#b0b0b0', fontStyle: 'italic' }}>Moeda não informada</span>}
+          </span>
+        </div>
+        <div className={styles.detailInfo}>
+          <span className={styles.detailLabel}>📞 DDD:</span>
+          <span className={styles.detailValue}>
+            {country.phone ? `+${country.phone}` : <span style={{ color: '#b0b0b0', fontStyle: 'italic' }}>DDD não informado</span>}
+          </span>
+        </div>
       </div>
       {/* Mapa */}
-      {country.media?.orthographic && (
+      {country.media?.orthographic ? (
         <div className={styles.detailMapBox}>
           <Image
             src={country.media.orthographic}
@@ -55,6 +109,24 @@ export default function CountryDetail({ country }) {
             className={styles.detailMap}
           />
           <div className={styles.detailMapLabel}>Localização</div>
+        </div>
+      ) : (
+        <div className={styles.detailMapBox} style={{
+          width: 260,
+          height: 160,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#f0f4f8',
+          color: '#177ebe',
+          borderRadius: 14,
+          fontWeight: 600,
+          fontSize: '1.05rem',
+          border: '1.5px dashed #177ebe55',
+          textAlign: 'center',
+          marginTop: 18
+        }}>
+          Localização não disponível
         </div>
       )}
     </section>

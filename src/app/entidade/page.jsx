@@ -59,8 +59,51 @@ const EntidadePage = () => {
         ) : (
           filteredItems.map((item) => (
             <div key={item.id} className={styles.card}>
-              {item.media?.flag && (
-                <img src={item.media.flag} alt={item.name} className={styles.image} />
+              {item.media?.flag ? (
+                <img
+                  src={item.media.flag}
+                  alt={item.name}
+                  className={styles.image}
+                  onError={e => {
+                    e.target.onerror = null;
+                    e.target.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.textContent = 'Bandeira não disponível';
+                    Object.assign(fallback.style, {
+                      width: '100%',
+                      height: '200px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: '#f0f4f8',
+                      color: '#177ebe',
+                      borderRadius: '8px',
+                      fontWeight: 600,
+                      fontSize: '1.1rem',
+                      marginBottom: '8px',
+                      border: '1.5px dashed #177ebe55',
+                      position: 'relative',
+                    });
+                    e.target.parentNode.insertBefore(fallback, e.target.nextSibling);
+                  }}
+                />
+              ) : (
+                <div style={{
+                  width: '100%',
+                  height: 200,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#f0f4f8',
+                  color: '#177ebe',
+                  borderRadius: 8,
+                  fontWeight: 600,
+                  fontSize: '1.1rem',
+                  marginBottom: 8,
+                  border: '1.5px dashed #177ebe55'
+                }}>
+                  Bandeira não disponível
+                </div>
               )}
               <h2 className={styles.cardTitle}>{item.name}</h2>
               <div className={styles.buttonRight} style={{ justifyContent: 'center', marginTop: 8 }}>
