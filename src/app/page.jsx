@@ -1,6 +1,8 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
+import notFoundStyles from "./not-found.module.css";
 
 export default function Page() {
   return (
@@ -24,6 +26,11 @@ export default function Page() {
         <p className={styles.description}>
           Sou estudante de Desenvolvimento de Sistemas no SENAI e faço parte da turma 2TDS2.
         </p>
+        <div style={{ margin: '18px 0 18px 0', display: 'flex', justifyContent: 'center' }}>
+          <Link href="/entidade" className={notFoundStyles.notFoundButton}>
+            🗺️ Explorar Países 
+          </Link>
+        </div>
         <blockquote className={styles.quote}>
           "A fé é a certeza das coisas que se esperam e a prova das coisas que não se veem." <br />
           <span style={{fontSize: '0.95em', color: '#177ebe'}}>– Hebreus 11:1</span>

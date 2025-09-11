@@ -54,7 +54,7 @@ export default function CountryDetail({ country }) {
             height={160}
             className={styles.detailMap}
           />
-          <div className={styles.detailMapLabel}>Mapa</div>
+          <div className={styles.detailMapLabel}>Localização</div>
         </div>
       )}
     </section>
