@@ -1,18 +1,18 @@
 import Image from "next/image";
-import styles from "../paises/paises.module.css";
+import styles from "./CountryDetail.module.css";
 
 export default function CountryDetail({ country }) {
   return (
-    <section className={styles.detailSection}>
+    <div className={styles.bgMapaMundi}>
+      <section className={styles.detailSection}>
       <div className={styles.detailHeader}>
-        {/* Bandeira à esquerda */}
         {country.media?.flag ? (
           <div className={styles.detailFlagBox}>
             <Image
               src={country.media.flag}
               alt={`Bandeira de ${country.name}`}
-              width={120}
-              height={80}
+                width={120}
+                height={80}
               className={styles.detailFlag}
             />
             <span className={styles.detailFlagLabel}>Bandeira</span>
@@ -35,19 +35,17 @@ export default function CountryDetail({ country }) {
             Bandeira não disponível
           </div>
         )}
-        {/* Nome centralizado */}
         <div className={styles.detailNameBox}>
           <h2 className={styles.detailName}>{country.name}</h2>
           <span className={styles.detailAbbr}>({country.abbreviation})</span>
         </div>
-        {/* Emblema à direita */}
         {country.media?.emblem ? (
           <div className={styles.detailEmblemBox}>
             <Image
               src={country.media.emblem}
               alt={`Emblema de ${country.name}`}
-              width={70}
-              height={70}
+                width={70}
+                height={70}
               className={styles.detailEmblem}
             />
             <span className={styles.detailEmblemLabel}>Emblema</span>
@@ -71,6 +69,7 @@ export default function CountryDetail({ country }) {
           </div>
         )}
       </div>
+
       {/* Containers de informações */}
       <div className={styles.detailInfoList}>
         <div className={styles.detailInfo}>
@@ -98,6 +97,7 @@ export default function CountryDetail({ country }) {
           </span>
         </div>
       </div>
+      
       {/* Mapa */}
       {country.media?.orthographic ? (
         <div className={styles.detailMapBox}>
@@ -124,11 +124,14 @@ export default function CountryDetail({ country }) {
           fontSize: '1.05rem',
           border: '1.5px dashed #177ebe55',
           textAlign: 'center',
-          marginTop: 18
+          marginTop: 18,
+          marginLeft: 'auto',
+          marginRight: 'auto',
         }}>
-          Localização não disponível
+          <span style={{ width: '100%', textAlign: 'center' }}>Localização não disponível</span>
         </div>
       )}
-    </section>
+      </section>
+    </div>
   );
 }

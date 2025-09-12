@@ -1,4 +1,4 @@
-import styles from "./appinfo.module.css";
+import styles from "./apiinfo.module.css";
 
 export default function ApiInfoPage() {
   return (
@@ -25,15 +25,17 @@ export default function ApiInfoPage() {
           <span className={styles.label}>URL base:</span> https://api.sampleapis.com/countries
         </p>
         <p className={styles.text}>
-          <span className={styles.label}>Endpoint usado:</span> /countries
+          <span className={styles.label}>Endpoint usado:</span> /paises
         </p>
         <p className={styles.text}>
           <span className={styles.label}>Atributos recebidos:</span>{" "}
-          <strong>id, nome, imagem, descricaoCurta, populacao, area</strong>
+          <strong>
+            id, name, abbreviation, capital, population, currency, phone,<br/>
+            media: &#123; flag, emblem, orthographic &#125;
+          </strong>
         </p>
         <p className={styles.text}>
-          <span className={styles.label}>Descrição:</span> Essa API fornece informações sobre
-          países, incluindo nome, população, área e outras características.
+          <span className={styles.label}>Descrição:</span> Essa API fornece informações sobre países do mundo. Para cada país, são disponibilizados dados como nome, sigla, capital, população, moeda, código telefônico internacional e imagens (bandeira, emblema e mapa). Os dados são ideais para aplicações de consulta, exibição de detalhes e comparativos entre países, facilitando a construção de experiências ricas e educativas sobre geografia e cultura global.
         </p>
       </div>
     </div>

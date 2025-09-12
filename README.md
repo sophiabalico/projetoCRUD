@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌍 Tripass - CRUD de Países
 
-## Getting Started
+Projeto desenvolvido em Next.js para consulta, detalhamento e cadastro de países, utilizando a Countries API. O sistema permite explorar informações detalhadas de cada país, com visual moderno, responsivo e foco em boas práticas de código.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Funcionalidades
+
+- 🔎 Busca e listagem de países
+- 📄 Visualização de detalhes completos de cada país
+- 🖼️ Mensagens de fallback para imagens ausentes (bandeira, emblema, localização)
+- 🚫 Página de erro personalizada (not-found) estilizada com Tailwind
+- ⚠️ Toast de erro para feedback de falhas na API
+- ♻️ Componentes reutilizáveis e CSS Modules
+- ℹ️ Página de informações da API utilizada
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [React 19](https://react.dev/)
+- [Axios](https://axios-http.com/)
+- [Tailwind CSS](https://tailwindcss.com/) (apenas para a página not-found)
+- CSS Modules (para todos os outros componentes)
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+projetoCRUD/
+├── public/
+│   ├── icons/
+│   └── images/
+├── src/
+│   └── app/
+│       ├── components/
+│       │   ├── CountryCard/
+│       │   ├── CountryDetail/
+│       │   ├── ErrorToast.jsx
+│       │   └── Header/
+│       ├── entidade/
+│       ├── apiinfo/
+│       ├── not-found.jsx
+│       ├── page.jsx
+│       ├── layout.jsx
+│       └── ...
+├── package.json
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🌐 API Utilizada
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Nome:** Countries API
+- **Documentação:** [https://sampleapis.com/api-list/countries](https://sampleapis.com/api-list/countries)
+- **URL base:** https://api.sampleapis.com/countries
+- **Endpoint:** /countries
+- **Atributos recebidos:**
+  - id, name, abbreviation, capital, population, currency, phone
+  - media: { flag, emblem, orthographic }
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Como rodar o projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone o repositório:**
+   ```bash
+   git clone <url-do-repositorio>
+   ```
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+3. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+4. **Acesse em:** [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🖥️ Principais Telas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Home:** Apresentação do projeto e navegação
+- **Lista de Países:** Busca, listagem e navegação para detalhes
+- **Detalhe do País:** Exibe todos os dados, imagens e fallback para ausências
+- **Página de Erro (not-found):** Visual moderno, estilizado com Tailwind
+- **Sobre a API:** Explicação detalhada da fonte dos dados
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👩‍💻 Autoria
+
+Desenvolvido por **Sophia Ellen dos Santos Balico**  
+Turma 2TDS2 - SENAI

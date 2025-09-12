@@ -1,0 +1,174 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.bgMapaMundi {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.detailSection {
+  background: linear-gradient(135deg, #f4faff 60%, #e3f0fa 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #177ebe22, 0 1.5px 0 #177ebe inset;
+  padding: 38px;
+  width: 900px;
+  max-width: 80%;
+  margin: 0 auto;
+  border: 2px solid #177ebe22;
+}
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.detailFlagBox, .detailEmblemBox {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.detailFlag {
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #177ebe33;
+  box-shadow: 0 2px 8px #177ebe22;
+}
+.detailFlagLabel, .detailEmblemLabel {
+  font-size: 15px;
+  color: #26658c;
+  margin-top: 4px;
+}
+.detailNameBox {
+  text-align: center;
+  flex: 1;
+}
+.detailName {
+  font-size: 34px;
+  font-weight: 800;
+  color: #177ebe;
+  margin: 0;
+  letter-spacing: 1px;
+}
+.detailAbbr {
+  color: #26658c;
+  font-weight: 600;
+  font-size: 19px;
+}
+.detailEmblem {
+  background: #fff;
+  border-radius: 10px;
+  border: 1.5px solid #177ebe22;
+  box-shadow: 0 2px 8px #177ebe22;
+}
+.detailInfoList {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.detailInfo {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #177ebe11;
+  padding: 18px 22px;
+  margin: 0 0 10px 0;
+  min-width: 180px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.detailLabel {
+  color: #177ebe;
+  font-weight: 700;
+  font-size: 17px;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.detailValue {
+  color: #222;
+  font-weight: 500;
+  font-size: 18px;
+}
+.detailMapBox {
+  text-align: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #177ebe11;
+  padding: 18px 22px;
+  margin: 18px 0 0 0;
+  min-width: 240px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.detailMap {
+  background: #fff;
+  border-radius: 14px;
+  border: 2px solid #177ebe22;
+  box-shadow: 0 4px 16px #177ebe22;
+  object-fit: contain;
+}
+.detailMapLabel {
+  font-size: 18px;
+  color: #26658c;
+  margin-top: 6px;
+}
+.fallbackFlag {
+  width: 120px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  color: #177ebe;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1.5px dashed #177ebe55;
+  text-align: center;
+}
+.fallbackEmblem {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  color: #177ebe;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px dashed #177ebe55;
+  text-align: center;
+}
+.fallbackMap {
+  width: 260px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  color: #177ebe;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: 1.5px dashed #177ebe55;
+  text-align: center;
+  margin-top: 18px;
+}

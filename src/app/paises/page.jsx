@@ -6,73 +6,116 @@ import Link from 'next/link';
 import styles from './paises.module.css';
 
 const PaisesPage = () => {
-	const [items, setItems] = useState([]);
-	const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get('https://api.sampleapis.com/countries/countries');
-				setItems(response.data);
-				setLoading(false);
-			} catch (error) {
-				console.error('Erro ao buscar dados:', error);
-				setLoading(false);
-			}
-		};
-		fetchData();
-	}, []);
+  useEffect(() => {
+	window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+	const fetchData = async () => {
+	  try {
+		const response = await axios.get('https://api.sampleapis.com/countries/countries');
+		setItems(response.data); // 
+		setLoading(false);
+	  } catch (error) {
+		console.error('Erro ao buscar dados:', error);
+		setLoading(false);
+	  }
+	};
 
-	if (loading) {
-		return <p>Carregando países...</p>;
-	}
+	fetchData();
+  }, []);
 
+  if (loading) {
 	return (
-		   <div className={styles.container}>
-			   <h1
-				   className={styles.entidadeTitulo + ' ' + styles.tituloLista}
-				   style={{
-					   fontSize: '2.3rem',
-					   fontWeight: 900,
-					   color: '#177ebe',
-					   letterSpacing: 1,
-					   textAlign: 'center',
-					   margin: '0 0 32px 0',
-					   textShadow: '0 2px 12px #177ebe22',
-					   background: 'none',
-					   borderRadius: 0,
-					   padding: 0,
-					   boxShadow: 'none',
-				   }}
-			   >
-				   🌍 Lista de Países
-			   </h1>
-			   <div
-				   className={styles.cardContainer}
-				   style={{
-					   display: 'grid',
-					   gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-					   gap: 'clamp(16px, 4vw, 32px)',
-					   width: '100%',
-					   maxWidth: 1200,
-					   margin: '0 auto',
-					   alignItems: 'stretch',
-				   }}
-			   >
-								{items.map((item) => (
-									<div key={item.id} className={styles.card} style={{ boxShadow: '0 8px 32px #177ebe22, 0 1.5px 0 #177ebe inset', border: '2px solid #177ebe22', background: 'linear-gradient(135deg, #f4faff 60%, #e3f0fa 100%)' }}>
-										<img src={item.media?.flag} alt={item.name} className={styles.image} style={{ border: '2px solid #177ebe33', background: '#fff' }} />
-										<h2 style={{ fontSize: 22, fontWeight: 700, color: '#177ebe', margin: '8px 0 2px 0' }}>{item.name}</h2>
-										<div className={styles.buttonCenter}>
-											<Link href={`/paises/${item.id}`} className={styles.detailsButton}>
-												🗺️ Ver mais
-											</Link>
-										</div>
-									</div>
-								))}
-			</div>
-		</div>
+	  <div className={styles.loadingBox}>
+		<span className={styles.loadingSpinner}></span>
+		<span className={styles.loadingText}>Carregando países...</span>
+	  </div>
 	);
+  }
+
+  // Filtra países pelo nome
+  const filteredItems = items.filter((item) =>
+	item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+	<div className={styles.container}>
+	  <h1 className={styles.entidadeTitulo}>Lista de Países 🌍</h1>
+	  <div className={styles.searchBarContainer}>
+		<input
+		  type="text"
+		  className={styles.searchBar}
+		  placeholder="🔎 Buscar país..."
+		  value={search}
+		  onChange={e => setSearch(e.target.value)}
+		/>
+	  </div>
+	  <div className={styles.cardContainer}>
+		{filteredItems.length === 0 ? (
+		  <p style={{width: '100%', textAlign: 'center', color: '#888', fontWeight: 500, fontSize: '1.1rem', marginTop: '32px'}}>Nenhum país encontrado.</p>
+		) : (
+		  filteredItems.map((item) => (
+			<div key={item.id} className={styles.card}>
+			  {item.media?.flag ? (
+				<img
+				  src={item.media.flag}
+				  alt={item.name}
+				  className={styles.image}
+				  onError={e => {
+					e.target.onerror = null;
+					e.target.style.display = 'none';
+					const fallback = document.createElement('div');
+					fallback.textContent = 'Bandeira não disponível';
+					Object.assign(fallback.style, {
+					  width: '100%',
+					  height: '200px',
+					  display: 'flex',
+					  alignItems: 'center',
+					  justifyContent: 'center',
+					  background: '#f0f4f8',
+					  color: '#177ebe',
+					  borderRadius: '8px',
+					  fontWeight: 600,
+					  fontSize: '1.1rem',
+					  marginBottom: '8px',
+					  border: '1.5px dashed #177ebe55',
+					  position: 'relative',
+					});
+					e.target.parentNode.insertBefore(fallback, e.target.nextSibling);
+				  }}
+				/>
+			  ) : (
+				<div style={{
+				  width: '100%',
+				  height: 200,
+				  display: 'flex',
+				  alignItems: 'center',
+				  justifyContent: 'center',
+				  background: '#f0f4f8',
+				  color: '#177ebe',
+				  borderRadius: 8,
+				  fontWeight: 600,
+				  fontSize: '1.1rem',
+				  marginBottom: 8,
+				  border: '1.5px dashed #177ebe55'
+				}}>
+				  Bandeira não disponível
+				</div>
+			  )}
+			  <h2 className={styles.cardTitle}>{item.name}</h2>
+			  <div className={styles.buttonRight} style={{ justifyContent: 'center', marginTop: 8 }}>
+				<Link href={`/paises/${item.id}`} className={styles.detailsButton}>
+				  🗺️ Ver mais
+				</Link>
+			  </div>
+			</div>
+		  ))
+		)}
+	  </div>
+	</div>
+  );
 };
 
 export default PaisesPage;

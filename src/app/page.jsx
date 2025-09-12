@@ -2,7 +2,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
-import notFoundStyles from "./not-found.module.css";
 
 export default function Page() {
   return (
@@ -27,8 +26,8 @@ export default function Page() {
           Sou estudante de Desenvolvimento de Sistemas no SENAI e faço parte da turma 2TDS2.
         </p>
         <div style={{ margin: '18px 0 18px 0', display: 'flex', justifyContent: 'center' }}>
-          <Link href="/entidade" className={notFoundStyles.notFoundButton}>
-            🗺️ Explorar Países 
+          <Link href="/paises" className={styles.notFoundButton}>
+            🗺️ Explorar Países
           </Link>
         </div>
         <blockquote className={styles.quote}>

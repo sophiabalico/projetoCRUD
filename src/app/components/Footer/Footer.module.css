@@ -1,0 +1,93 @@
+.footer {
+  background: linear-gradient(90deg, #011c40, #26658c);
+  color: #fff;
+  padding: 28px 0 16px 0;
+  width: 100%;
+  margin-top: 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brandArea {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px #011c4033;
+}
+.brandName {
+  font-size: 1.22rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #d9e8fc;
+  font-family: 'Poppins', sans-serif;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.label {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 6px;
+}
+.socialIcon {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px #011c4033;
+}
+
+.socialIcon:hover {
+  background: #d9e8fc;
+  color: #011c40;
+}
+
+.copy {
+  font-size: 1rem;
+  color: #d9e8fc;
+  text-align: right;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+  gap: 12px;
+  }
+  .brandArea {
+    margin-bottom: 2px;
+  }
+  .copy {
+    text-align: left;
+    margin-top: 2px;
+  }
+}

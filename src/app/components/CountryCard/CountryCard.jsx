@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../paises/paises.module.css";
+import styles from "./CountryCard.module.css";
 
 export default function CountryCard({ country }) {
   return (
@@ -9,7 +9,7 @@ export default function CountryCard({ country }) {
         alt={country.name}
         className={styles.image}
       />
-      <h2 style={{ fontSize: 20, fontWeight: 700, color: '#177ebe', margin: '8px 0 2px 0' }}>{country.name}</h2>
+      <h2 className={styles.cardTitle}>{country.name}</h2>
       <div className={styles.buttonCenter}>
         <Link
           href={`/paises/${country.id}`}

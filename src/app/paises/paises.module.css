@@ -1,229 +1,171 @@
-/* Detalhes do país - visual moderno */
-.detailSection {
-  background: linear-gradient(135deg, #f4faff 60%, #e3f0fa 100%);
-  border-radius: 22px;
-  box-shadow: 0 8px 32px #177ebe22, 0 1.5px 0 #177ebe inset;
-  padding: 38px;
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-  border: 2px solid #177ebe22;
+/* Loader estilizado */
+.loadingBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
-}
-.detailHeader {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  width: 100%;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.detailFlagBox, .detailEmblemBox {
-  min-width: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.detailFlag {
-  border-radius: 12px;
-  background: #fff;
-  border: 2px solid #177ebe33;
-  box-shadow: 0 2px 8px #177ebe22;
-}
-.detailFlagLabel, .detailEmblemLabel {
-  font-size: 15px;
-  color: #26658c;
-  margin-top: 4px;
-}
-.detailNameBox {
-  text-align: center;
-  flex: 1;
-}
-.detailName {
-  font-size: 34px;
-  font-weight: 800;
-  color: #177ebe;
-  margin: 0;
-  letter-spacing: 1px;
-}
-.detailAbbr {
-  color: #26658c;
-  font-weight: 600;
-  font-size: 19px;
-}
-.detailEmblem {
-  background: #fff;
-  border-radius: 10px;
-  border: 1.5px solid #177ebe22;
-  box-shadow: 0 2px 8px #177ebe22;
-}
-.detailInfoList {
-  width: 100%;
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.detailInfo {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px #177ebe11;
-  padding: 18px 22px;
-  margin: 0 0 10px 0;
-  min-width: 180px;
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.detailLabel {
-  color: #177ebe;
-  font-weight: 700;
-  font-size: 17px;
-  min-width: 80px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.detailValue {
-  color: #222;
-  font-weight: 500;
-  font-size: 18px;
-}
-.detailMapBox {
-  text-align: center;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px #177ebe11;
-  padding: 18px 22px;
-  margin: 18px 0 0 0;
-  min-width: 240px;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.detailMap {
-  background: #fff;
-  border-radius: 14px;
-  border: 2px solid #177ebe22;
-  box-shadow: 0 4px 16px #177ebe22;
-  object-fit: contain;
-}
-.detailMapLabel {
-  font-size: 18px;
-  color: #26658c;
-  margin-top: 6px;
-}
-/* Margem maior para o título da lista de países */
-.tituloLista {
-  margin-top: 100px;
-}
-/* Centraliza o botão no card */
-.buttonCenter {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 8px;
+  min-height: 60vh;
+  gap: 18px;
 }
 
-.detailsButton {
-  min-width: 0;
-  padding: 8px 18px;
-  font-size: 0.98rem;
-  border-radius: 6px;
-}
-.card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(23,126,190,0.10), 0 1.5px 0 #177ebe inset;
-  padding: 22px 18px 18px 18px;
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  text-align: center;
-  border: 2px solid #177ebe22;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.card:hover {
-  box-shadow: 0 12px 36px rgba(23,126,190,0.18), 0 2px 0 #177ebe inset;
-  transform: translateY(-4px) scale(1.03);
-}
-.image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px #177ebe22;
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #d9e8fc;
+  border-top: 5px solid #177ebe;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
   margin-bottom: 8px;
 }
-.detailsButton {
-  display: inline-block;
-.cardContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: clamp(16px, 4vw, 32px);
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: stretch;
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-  padding: 12px 28px;
-  background: linear-gradient(90deg, #177ebe 0%, #26658c 100%);
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  width: 100%;
-  box-shadow: 0 2px 8px #177ebe33;
+
+.loadingText {
+  color: #177ebe;
+  font-size: 1.25rem;
   font-weight: 600;
-  font-size: 1rem;
   letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-  outline: none;
 }
-.detailsButton:hover {
-  background: linear-gradient(90deg, #125e8e 0%, #177ebe 100%);
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 16px #177ebe44;
-}
-.detailsButton:active {
-  transform: scale(0.98);
-  box-shadow: 0 1px 4px #177ebe22;
-}
-.image {
+/* Barra de busca personalizada */
+.searchBarContainer {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px #177ebe22;
-  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 32px 0;
 }
-@media (max-width: 600px) {
+
+.searchBar {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 22px 14px 44px;
+  border-radius: 18px;
+  border: 2px solid #177ebe;
+  background: #f4f8ff url('/icons/globo.png') 12px center/24px 24px no-repeat;
+  font-size: 1.1rem;
+  color: #177ebe;
+  font-weight: 600;
+  outline: none;
+  box-shadow: 0 2px 12px rgba(23,126,190,0.07);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.searchBar:focus {
+  border: 2px solid #011c40;
+  box-shadow: 0 4px 18px rgba(23,126,190,0.13);
+}
+ .cardTitle {
+  font-size: 1.3rem;
+  color: #177ebe;
+  font-weight: bold;
+  text-align: center;
+  margin: 18px 0 10px 0;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 2px 8px #177ebe22;
+}
+/* Título estilizado */
+.entidadeTitulo {
+  color: #177ebe;
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 2px 8px #177ebe22;
+}
+  .container {
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    background: none;
+  }
+
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(90deg, #f0f4f8, #d9e8fc), url('/images/mapa-mundi.png') center center/cover no-repeat;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .container > * {
+    position: relative;
+    z-index: 1;
+  }
+  
   .cardContainer {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 0 4vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
   }
+  
   .card {
-    padding: 16px 8px 14px 8px;
-    border-radius: 12px;
-    font-size: 0.98rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: box-shadow 0.22s, transform 0.22s;
   }
+
+  .card:hover {
+    box-shadow: 0 12px 36px rgba(23,126,190,0.18), 0 2px 0 #177ebe inset;
+    transform: translateY(-4px) scale(1.03);
+  }
+
+  .buttonRight {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+  }
+  
   .image {
-    max-width: 100vw;
-    height: 100px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
   }
+  
   .detailsButton {
-    font-size: 0.98rem;
-    padding: 10px 18px;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #011c40, #26658c 100%);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 112, 243, 0.15);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    outline: none;
   }
-}
+  
+  .detailsButton:hover {
+  background: #09437d;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(0, 112, 243, 0.18);
+  }
+
+  .detailsButton:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 112, 243, 0.10);
+  }
