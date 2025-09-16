@@ -27,29 +27,33 @@ export default function ApiInfoPage() {
           https://api.sampleapis.com/countries/countries
         </p>
         <p className={styles.text}>
-          <span className={styles.label}>Atributos recebidos:</span>{" "}
-          <pre className={styles.json}>
-            {`{
-  "abbreviation": "BR",
-  "capital": "Brasilia",
-  "currency": "BRL",
-  "name": "Brazil",
-  "phone": "55",
-  "population": 207652865,
-  "media": {
-    "flag": "https://exampleflagurl.com/brazil.png",
-    "emblem": "https://exampleemblemurl.com/brazil.png",
-    "orthographic": "https://examplemapurl.com/brazil.png"
-  },
-  "id": 21
-}`}
-          </pre>
+          <span className={styles.label}>Atributos recebidos:</span>
+          <ul className={styles.json}>
+            {"{"}
+            <li>"abbreviation": "BR"</li>
+            <li>"capital": "Brasilia"</li>
+            <li>"currency": "BRL"</li>
+            <li>"name": "Brazil"</li>
+            <li>"phone": "55"</li>
+            <li>"population": 207652865</li>
+            <li>
+              "media": {"{"}
+              <ul>
+                <li>"flag": "https://exampleflagurl.com/brazil.png"</li>
+                <li>"emblem": "https://exampleemblemurl.com/brazil.png"</li>
+                <li>"orthographic": "https://examplemapurl.com/brazil.png"</li>
+              </ul>
+              {"}"}
+            </li>
+            <li>"id": 21</li>
+            {"}"}
+          </ul>
         </p>
         <p className={styles.text}>
-          <span className={styles.label}>Rotas:</span>{" "}
-          GET: /paises - Lista todos os países
+          <span className={styles.label}>Rotas:</span> GET: /paises - Lista
+          todos os países
           <br />
-          GET: /paises/{'{id}'} - Detalhes de um país específico
+          GET: /paises/{"{id}"} - Detalhes de um país específico
         </p>
         <p className={styles.text}>
           <span className={styles.label}>Descrição:</span> Essa API fornece
