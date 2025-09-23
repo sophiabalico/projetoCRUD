@@ -1,0 +1,9 @@
+/* Botão de ver detalhes */
+.btn-details {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .btn-details:hover {
+    background-color: #e68900;
+  }

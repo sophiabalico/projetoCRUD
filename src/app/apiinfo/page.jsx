@@ -26,7 +26,7 @@ export default function ApiInfoPage() {
           <span className={styles.label}>Endpoint usado:</span>{" "}
           https://api.sampleapis.com/countries/countries
         </p>
-        <p className={styles.text}>
+        <div className={styles.text}>
           <span className={styles.label}>Atributos recebidos:</span>
           <ul className={styles.json}>
             {"{"}
@@ -48,7 +48,7 @@ export default function ApiInfoPage() {
             <li>"id": 21</li>
             {"}"}
           </ul>
-        </p>
+        </div>
         <p className={styles.text}>
           <span className={styles.label}>Rotas:</span> GET: /paises - Lista
           todos os países
