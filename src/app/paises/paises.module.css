@@ -169,3 +169,80 @@
     transform: scale(0.98);
     box-shadow: 0 1px 4px rgba(0, 112, 243, 0.10);
   }
+
+  .fabButton {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #177ebe 0%, #1e88e5 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 6px 25px rgba(23, 126, 190, 0.4);
+    z-index: 1000;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fabButton:hover {
+    background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+    box-shadow: 0 8px 30px rgba(23, 126, 190, 0.6);
+    text-decoration: none;
+  }
+  
+  .fabButton:active {
+    box-shadow: 0 4px 20px rgba(23, 126, 190, 0.4);
+  }
+  
+  .fabIcon {
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  
+  /* Responsivo para tablet */
+  @media (max-width: 768px) {
+    .fabButton {
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+    }
+    
+    .fabIcon {
+      font-size: 28px;
+    }
+  }
+  
+  /* Para telas muito pequenas (mobile) */
+  @media (max-width: 480px) {
+    .fabButton {
+      bottom: 15px;
+      right: 15px;
+      width: 55px;
+      height: 55px;
+    }
+    
+    .fabIcon {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .entidadeTitulo {
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .entidadeTitulo {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+  }
